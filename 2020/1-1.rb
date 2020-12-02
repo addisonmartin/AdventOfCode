@@ -1,17 +1,16 @@
 sum = 2020
 
 def readInputsFromFile(path)
-   [
-     1721,
-     979,
-     366,
-     299,
-     675,
-     1456
-   ]
- end
+  raw_inputs = []
 
-inputs = readInputsFromFile('~/Documents/AdventOfCode/2020/day_1_inputs.txt')
+  File.readlines(path).each do |line|
+    raw_inputs << line.chomp.to_i
+  end
+
+  raw_inputs
+end
+
+inputs = readInputsFromFile('day_1_inputs.txt')
 
 for input in inputs
   for other_input in inputs
